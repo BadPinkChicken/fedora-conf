@@ -47,15 +47,15 @@ dnf install -y valgrind-devel-1\:3.11.0-18.fc23.x86_64
 echo $red "done" $normal
 
 echo $red "installing atom" $normal
-##wget https://github.com/atom/atom/releases/download/v1.6.2/atom.x86_64.rpm
-##dnf install ./atom.x86_64.rpm
-##mv atom.x86_64.rpm /tmp
+wget https://github.com/atom/atom/releases/download/v1.6.2/atom.x86_64.rpm
+dnf install ./atom.x86_64.rpm
+mv atom.x86_64.rpm /tmp
 echo $red "done" $normal
  
 echo $red "installing blih" $normal
-##wget https://raw.githubusercontent.com/steven-martins/blih2exe/master/blih.py
-##chmod 777 blih.py
-##mv blih.py /usr/bin/blih
+wget https://raw.githubusercontent.com/steven-martins/blih2exe/master/blih.py
+chmod 777 blih.py
+mv blih.py /usr/bin/blih
 echo $red "done" $normal
 
 echo $red "Getting conf files" $normal
