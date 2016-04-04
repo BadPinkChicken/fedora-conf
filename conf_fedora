@@ -48,7 +48,7 @@ echo $red "done" $normal
 
 echo $red "installing atom" $normal
 wget https://github.com/atom/atom/releases/download/v1.6.2/atom.x86_64.rpm
-dnf install ./atom.x86_64.rpm
+dnf install -y ./atom.x86_64.rpm
 mv atom.x86_64.rpm /tmp
 echo $red "done" $normal
  
@@ -58,11 +58,11 @@ chmod 777 blih.py
 mv blih.py /usr/bin/blih
 echo $red "done" $normal
 
-echo $red "Getting conf files" $normal
-wget http://salnikoff.fr/tekstuff/conf_files.tar.gz
-tar zxvf conf_files.tar.gz
-cp -v -r ./conf_files/. /home/$1
-mv ./conf_files /tmp/
-mv ./conf_files.tar.gz /tmp
+##echo $red "Getting conf files" $normal
+##wget http://salnikoff.fr/tekstuff/conf_files.tar.gz
+##tar zxvf conf_files.tar.gz
+##cp -v -r ./conf_files/. /home/$1
+##mv ./conf_files /tmp/
+##mv ./conf_files.tar.gz /tmp
 echo "done"
 
