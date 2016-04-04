@@ -9,6 +9,10 @@ fi
 red="\033{0;31m"
 normal="\033[0m"
 
+echo -e $red "Installation de Htop" $normal
+dnf install -y gcc gcc-c++
+echo $red "done" $normal
+
 echo -e $red "Installation de gcc et g++" $normal
 dnf install -y gcc gcc-c++
 echo $red "Fait" $normal
