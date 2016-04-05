@@ -62,8 +62,8 @@ chmod 777 blih.py
 mv blih.py /usr/bin/blih
 echo $red "done" $normal
 
-echo $red "Upgrading pip" $normal
-pip install --upgrade pip
+echo $red "Upgrading pip NOPE" $normal
+##pip install --upgrade pip
 echo $red "done" $normal
 
 echo $red "installingr eg" $normal
