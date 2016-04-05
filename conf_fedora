@@ -62,6 +62,15 @@ chmod 777 blih.py
 mv blih.py /usr/bin/blih
 echo $red "done" $normal
 
+echo $red "Upgrading pip" $normal
+pip install --upgrade pip
+echo $red "done" $normal
+
+echo $red "installingr eg" $normal
+pip install eg
+echo $red "done" $normal
+
+
 ##echo $red "Getting conf files" $normal
 ##wget http://salnikoff.fr/tekstuff/conf_files.tar.gz
 ##tar zxvf conf_files.tar.gz
