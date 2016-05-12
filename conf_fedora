@@ -84,11 +84,11 @@ bash -c 'su -c "curl http://folkswithhats.org/fedy-installer -o fedy-installer &
 echo $red "done" $normal
 
 echo $red "installing gnome tweak tool" $normaal
-dnf install gnome-tweak-tool
+dnf install gnome-tweak-tool -y
 echo $red "done" $normal
 
 echo $red "installing vlc" $normal
-dnf install vlc
+dnf install vlc -y
 echo $red "done" $normal
 
 ##echo $red "Getting conf files" $normal
