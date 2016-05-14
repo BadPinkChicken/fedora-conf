@@ -91,6 +91,10 @@ echo $red "installing vlc" $normal
 dnf install vlc -y
 echo $red "done" $normal
 
+echo $red "installing ftp" $normal
+dnf install ftp -y
+echo $red "done" $normal
+
 ##echo $red "Getting conf files" $normal
 ##wget XXX
 ##tar zxvf conf_files.tar.gz
