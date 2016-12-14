@@ -1,104 +1,128 @@
 #!/bin/bash
 
 if [[ $EUID -ne 0 ]]; then
-   echo "This script must be run as root" 1>&2
+   echo -e "This script must be run as root" 1>&2
    exit 1
 fi
 
 
-red="\033{0;31m"
+red="\033[0;31m"
 normal="\033[0m"
 
-echo -e $red "Installation de most" $normal
+echo -e "${red}Installation de most${normal}"
 dnf install -y most
-echo $red "done" $normal
+echo -e "${red}done${normal}"
 
-echo -e $red "Installation de terminator" $normal
+echo -e "${red}Installation de terminator${normal}"
 dnf install -y terminator
-echo $red "done" $normal
+echo -e "${red}done${normal}"
 
-echo -e $red "Installation de Htop" $normal
+echo -e "${red}Installation de Htop${normal}"
 dnf install -y htop
-echo $red "done" $normal
+echo -e "${red}done${normal}"
 
-echo -e $red "Installation de gcc et g++" $normal
+echo -e "${red}Installation de gcc et g++${normal}"
 dnf install -y gcc gcc-c++
-echo $red "Fait" $normal
+echo -e "${red}Fait${normal}"
 
-echo $red "Installation d'emacs" $normal
+echo -e "${red}Installation d'emacs${normal}"
 dnf install -y emacs
-echo "alias emacs=\"emacs -nw\"" >> ~/.bashrc
-echo "alias ne=\"emacs\"" >> ~/.bashrc
-echo  $red "done" $normal
+echo -e "alias emacs=\"emacs -nw\"" >> ~/.bashrc
+echo -e "alias ne=\"emacs\"" >> ~/.bashrc
+echo  "${red}done${normal}"
 
-echo $red "Installations de lib perso" $normal
+echo -e "${red}Installations de lib perso${normal}"
 dnf install -y glew glew-devel
 
-echo $red "SFML2.3" $normal
-dnf install -y SFML-devel-2.3-1.fc23.x86_64
+echo -e "${red}SFML2.3${normal}"
+dnf install -y SFML-devel
 
-echo $red "OpenGL" $normal
-dnf install -y freeglut-devel-3.0.0-2.fc23.x86_64
+echo -e "${red}OpenGL${normal}"
+dnf install -y freeglut-devel
 
-echo $red "SDL1.2 + SDL2 + deps" $normal
-dnf install -y SDL2-devel-2.0.3-7.fc23.x86_64
-dnf install -y SDL2_image-devel-2.0.0-8.fc23.x86_64
-dnf install -y SDL2_mixer-devel-2.0.1-1.fc23.x86_64
-dnf install -y SDL2_ttf-devel-2.0.13-1.fc23.x86_64
-dnf install -y SDL-devel-1.2.15-20.fc23.x86_64
-dnf install -y SDL_image-devel-1.2.12-13.fc23.x86_64
-dnf install -y SDL_mixer-devel-1.2.12-10.fc23.x86_64
-dnf install -y SDL_ttf-devel-2.0.11-7.fc23.x86_64
+echo -e "${red}SDL1.2 + SDL2 + deps${normal}"
+dnf install -y SDL2-devel
+dnf install -y SDL2_image-devel
+dnf install -y SDL2_mixer-devel
+dnf install -y SDL2_ttf-devel
+dnf install -y SDL-devel
+dnf install -y SDL_image-devel
+dnf install -y SDL_mixer-devel
+dnf install -y SDL_ttf-devel
 
-echo $red "libcaca" $normal
-dnf install -y libcaca-devel-0.99-0.25.beta18.fc23.x86_64
-echo $red "done" $normal
+echo -e "${red}installing valgrind${normal}"
+dnf install -y valgrind-devel
+echo -e "${red}done${normal}"
 
-echo $red "installing valgrind" $normal
-dnf install -y valgrind-devel-1\:3.11.0-18.fc23.x86_64
-echo $red "done" $normal
-
-echo $red "installing atom" $normal
+echo -e "${red}installing atom${normal}"
 wget https://github.com/atom/atom/releases/download/v1.6.2/atom.x86_64.rpm
 dnf install -y ./atom.x86_64.rpm
 mv atom.x86_64.rpm /tmp
-echo $red "done" $normal
+echo -e "${red}done${normal}"
 
-echo $red "installing blih" $normal
+echo -e "${red}installing blih${normal}"
 wget https://raw.githubusercontent.com/BadPinkChicken/blih2exe/master/blih.py
 chmod 777 blih.py
 mv blih.py /usr/bin/blih
-echo $red "done" $normal
+echo -e "${red}done${normal}"
 
 #cause bugs why ?
-echo $red "Upgrading pip NOPE" $normal
+##echo -e "${red}Upgrading pip NOPE${normal}"
 ##pip install --upgrade pip
-echo $red "done" $normal
+##echo -e "${red}done${normal}"
 
-echo $red "installing eg" $normal
+echo -e "${red}installing eg${normal}"
 pip install eg
-echo $red "done" $normal
+echo -e "${red}done${normal}"
 
-echo $red "installing fedy" $normal
+echo -e "${red}installing fedy${normal}"
 bash -c 'su -c "curl http://folkswithhats.org/fedy-installer -o fedy-installer && chmod +x fedy-installer && ./fedy-installer"'
-echo $red "done" $normal
+echo -e "${red}done${normal}"
 
-echo $red "installing gnome tweak tool" $normaal
+echo -e "${red}installing gnome tweak tool" $normaal
 dnf install gnome-tweak-tool -y
-echo $red "done" $normal
+echo -e "${red}done${normal}"
 
-echo $red "installing vlc" $normal
+echo -e "${red}installing vlc${normal}"
 dnf install vlc -y
-echo $red "done" $normal
+echo -e "${red}done${normal}"
 
-echo $red "installing ftp" $normal
+echo -e "${red}installing ftp${normal}"
 dnf install ftp -y
-echo $red "done" $normal
+echo -e "${red}done${normal}"
 
-##echo $red "Getting conf files" $normal
-##wget XXX
-##tar zxvf conf_files.tar.gz
-##cp -v -r ./conf_files/. /home/$1
-##mv ./conf_files /tmp/
-##mv ./conf_files.tar.gz /tmp
-echo "done"
+echo -e "${red}installing filezilla${normal}"
+dnf install filezilla -y
+echo -e "${red}done${normal}"
+
+echo -e "${red}installing gimp${normal}"
+dnf install gimp -y
+echo -e "${red}done${normal}"
+
+echo -e "${red}install git-cola${normal}"
+dnf install git-cola -y
+echo -e "${red}done${normal}"
+
+echo -e "${red}install unrar${normal}"
+dnf install unrar -y
+echo -e "${red}done${normal}"
+
+echo -e "${red}installing IDE's${normal}"
+echo -e "${red}IntelliJ${normal}"
+cd /tmp
+wget https://download.jetbrains.com/idea/ideaIU-2016.3.1.tar.gz
+cp ideaIU-2016.3.1.tar.gz /opt/
+tar -xvf ideaIU-2016.3.1.tar.gz
+ln -sf /opt/ideaIU-2016.3.1 /opt/idea
+ln -s /opt/idea/bin/idea.sh /usr/local/bin/idea
+echo -e "${red}done${normal}"
+
+echo $done
+
+echo -e "${red}Getting conf files${normal}"
+wget http://XXX/tekstuff/conf_files.tar.gz
+tar zxvf conf_files.tar.gz
+cp -v -r ./conf_files/. /home/$1
+mv ./conf_files /tmp/
+mv ./conf_files.tar.gz /tmp
+echo -e "done"echo -e "done"
